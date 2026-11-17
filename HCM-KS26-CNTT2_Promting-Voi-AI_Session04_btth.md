@@ -112,11 +112,11 @@ Cấu trúc JSON đầu ra:
     
 - **Cơ chế xử lý của chuỗi Prompt:**
     
-    1. Ở Bước 1, LLM nhận diện không đủ thông tin hợp đồng thông qua phần `<thought>`, chuyển trạng thái `status: "error"`.
+    -  Ở Bước 1, LLM nhận diện không đủ thông tin hợp đồng thông qua phần `<thought>`, chuyển trạng thái `status: "error"`.
         
-    2. Code ứng dụng (Python/Node.js) bắt được `status: "error"` từ JSON trả về của Bước 1, tự động ngắt chuỗi (short-circuit), bỏ qua Bước 2 và Bước 3 để tiết kiệm token và thời gian.
+    -  Code ứng dụng (Python/Node.js) bắt được `status: "error"` từ JSON trả về của Bước 1, tự động ngắt chuỗi (short-circuit), bỏ qua Bước 2 và Bước 3 để tiết kiệm token và thời gian.
         
-    3. Hệ thống trả về thông báo lỗi thân thiện cho người dùng: _"Dữ liệu đầu vào không hợp lệ hoặc không đủ cấu trúc hợp đồng để phân tích."_, đảm bảo hệ thống không bị crash.
+    -  Hệ thống trả về thông báo lỗi thân thiện cho người dùng: _"Dữ liệu đầu vào không hợp lệ hoặc không đủ cấu trúc hợp đồng để phân tích."_, đảm bảo hệ thống không bị crash.
 
 Kết quả đầu ra sạch lỗi của AI:
 
